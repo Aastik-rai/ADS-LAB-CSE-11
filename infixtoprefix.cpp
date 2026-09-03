@@ -70,12 +70,10 @@ using namespace std;
 
 }
 int main(){
-    string s="(A+B)*C-D+F";
+    string s="A/B*C-D+E/F/(G+H)";
     string sol=infixtoprefix(s);
     for(int i=0;i<sol.size();i++){
         cout<<sol[i]<<" ";
 
     }
     
-    
-}
