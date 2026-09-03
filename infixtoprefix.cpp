@@ -14,7 +14,7 @@ using namespace std;
 
 }
 
- string infixtopostfix(string s){
+ string infixtoprefix(string s){
     reverse(s.begin(),s.end());
     int i=0;
     stack<int>st;
@@ -71,7 +71,7 @@ using namespace std;
 }
 int main(){
     string s="(A+B)*C-D+F";
-    string sol=infixtopostfix(s);
+    string sol=infixtoprefix(s);
     for(int i=0;i<sol.size();i++){
         cout<<sol[i]<<" ";
 
