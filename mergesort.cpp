@@ -3,11 +3,11 @@ using namespace std;
 
 
 
-void mergeA(vector<int>&arr,int low,int mid,int high){
+void mergeA(vector<int>&arr,int low,int mid,int high){    //merge the divided array 
     vector<int>temp;
     int left=low;
     int right=mid+1;
-    while(left<=mid&&right<=high){
+    while(left<=mid&&right<=high){  //compare left and right and push the smaller in temp
         if(arr[left]<=arr[right]){
             temp.push_back(arr[left]);
             left++;
@@ -19,11 +19,11 @@ void mergeA(vector<int>&arr,int low,int mid,int high){
         }
         
     }
-    while(left<=mid){
+    while(left<=mid){                //push the remaining left in temp
         temp.push_back(arr[left]);
         left++;    
     }
-    while(right<=high){
+    while(right<=high){               //push the remaining right in temp
         temp.push_back(arr[right]);
         right++;    
     }
@@ -33,7 +33,8 @@ void mergeA(vector<int>&arr,int low,int mid,int high){
     }
 
 }
-void mS(vector<int>&arr,int low,int high){
+void mS(vector<int>&arr,int low,int high){        //divide the array from mid and call merge sort recursively until low<high and then merge every piece 
+
     if(low>=high)return;
     int mid=(low+high)/2;
     mS(arr,low,mid);
